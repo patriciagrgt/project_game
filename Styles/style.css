@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #87CEEB;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#game-area {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 50px auto;
+    border: 2px solid #ffffff;
+    background: url(../Images/fondo_mar_.png);
+    background-size: 800px 100%;
+    background-repeat: repeat-x;
+    animation: moveBackground 10s linear infinite;
+}
+
+#game-intro{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    
+    
+    
+    width: 600px;
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -800px 0;
+    }
+}
+
+
+.player {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: url("../Images/dive.png") no-repeat center center;
+    background-size: contain;
+    top: 50%;
+    left: 50px;
+}
+
+body button {
+    font-size: 24px;
+    background-color: #BBE4FF;
+    color: #000000;
+    padding: 16px 32px;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.logo-img {
+    margin-top: 40px;
+    width: 100px;
+    height: 100px;
+}
+
+h1{
+   font-size: 24px;
+   margin-top: 24px;
+   margin-bottom: 40px;
+}
+.arrows-img{
+    margin-bottom: 40px;
+}
+

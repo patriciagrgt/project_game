@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Save the world</title>
+    <link rel="stylesheet" href="Styles/style.css">
 </head>
+
 <body>
-    
+    <main>
+        <div id="game-intro">
+            <img src="Images/logo.png" alt="logo" class="logo-img" />
+            <h1>Nombre del juego</h1>
+            <button id="start-button">Start Game</button>
+            <p>Use the up and down arrow to control the dive!</p>
+            <img src="Images/Arrows.png" alt="arrows" class="arrows-img" />
+          </div>
+
+        <div class="game-container">
+            <div id="game-area">
+                <div class="player" id="player"></div>
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/obstacle.js"></script>
+
 </body>
+
 </html>
