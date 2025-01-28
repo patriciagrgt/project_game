@@ -1,80 +1,143 @@
 body {
     margin: 0;
-    overflow: hidden;
-    background-color: #87CEEB;
     font-family: Arial, sans-serif;
-    text-align: center;
+    background-color: #87CEEB;
+    overflow: hidden;
 }
 
-#game-area {
-    position: relative;
-    width: 600px;
-    height: 400px;
-    margin: 50px auto;
-    border: 2px solid #ffffff;
-    background: url(../Images/fondo_mar_.png);
-    background-size: 800px 100%;
-    background-repeat: repeat-x;
-    animation: moveBackground 10s linear infinite;
-}
-
-#game-intro{
-    background-color: #ffffff;
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px auto;
-    
-    
-    
-    width: 600px;
+    justify-content: center;
+    height: 100vh;
+}
+
+#game-intro, #game-end {
+    text-align: center;
+}
+
+#game-intro img.logo-img, #game-end img.logo-img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+#start-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #12339c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#start-button:hover {
+    background-color: #00165e;
+}
+
+#restart-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart-button:hover {
+    background-color: #218838;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    background-image: url(../images/background-sea.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moveBackground 20s linear infinite;
 }
 
 @keyframes moveBackground {
     from {
         background-position: 0 0;
     }
-
     to {
-        background-position: -800px 0;
+        background-position: -1920px 0;
     }
 }
 
+#game-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 
-.player {
+#player {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    background: url("../Images/dive.png") no-repeat center center;
-    background-size: contain;
-    top: 50%;
+    bottom: 50%;
     left: 50px;
+    width: 210px;
+    height: 140px;
+    background-image: url(../images/diver.png);
+    background-size: cover;
 }
 
-body button {
-    font-size: 24px;
-    background-color: #BBE4FF;
-    color: #000000;
-    padding: 16px 32px;
-    border: 0;
-    box-shadow: 0;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    cursor: pointer;
+.obstacle {
+    background-image: url(../images/shark.png);
+    background-size: cover;
+    position: absolute;
+    width: 120px;
+    height: 80px;
 }
 
-.logo-img {
-    margin-top: 40px;
-    width: 100px;
-    height: 100px;
+.bottle {
+    background-image: url(../images/plastic-bottle.png);
+    background-size: cover;
+    position: absolute;
+    width: 80px;
+    height: 40px;
 }
 
-h1{
-   font-size: 24px;
-   margin-top: 24px;
-   margin-bottom: 40px;
+.oxygen {
+    background-image: url(../images/oxygen.png);
+    background-size: cover;
+    position: absolute;
+    width: 40px;
+    height: 120px;
 }
-.arrows-img{
-    margin-bottom: 40px;
+
+#life-bar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 300px;
+    height: 20px;
+    border: 2px solid #000;
+    background-color: #ccc;
+}
+
+#life-fill {
+    width: 100%;
+    height: 100%;
+    background-color: #28a745;
+}
+
+#lives {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+#lives .life {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/heart.png);
+    background-size: cover;
 }
 

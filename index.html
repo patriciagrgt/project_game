@@ -4,32 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save the world</title>
-    <link rel="stylesheet" href="Styles/style.css">
+    <title>Save the Ocean</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
     <main>
         <div id="game-intro">
-            <img src="Images/logo.png" alt="logo" class="logo-img" />
-            <h1>Nombre del juego</h1>
+            <img src="images/logo.png" alt="logo" class="logo-img" />
+            <h1>Save the Ocean</h1>
             <button id="start-button">Start Game</button>
-            <p>Use the up and down arrow to control the dive!</p>
-            <img src="Images/Arrows.png" alt="arrows" class="arrows-img" />
-          </div>
+            <p>Use the up and down arrow keys to control the diver!</p>
+            <img src="images/arrows.png" alt="arrows" class="arrows-img" />
+        </div>
 
         <div class="game-container">
             <div id="game-area">
+                <div id="life-bar">
+                    <div id="life-fill"></div>
+                </div>
+                <div id="lives"></div>
                 <div class="player" id="player"></div>
+            </div>
+        </div>
+
+        <div id="game-end">
+            <div id="game-end-area">
+                <img src="images/logo.png" alt="logo" class="logo-img" />
+                <h1 id="end-message"></h1>
+                <button id="restart-button">Restart</button>
             </div>
         </div>
     </main>
 
     <script type="text/javascript" src="js/game.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/player.js"></script>
     <script type="text/javascript" src="js/obstacle.js"></script>
-
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 
 </html>
