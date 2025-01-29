@@ -1,7 +1,7 @@
 class Diver {
     constructor() {
         this.element = document.getElementById('player');
-        this.position = 50;
+        this.position = 50; // Start in the middle of the screen
         this.lives = 2;
         this.lifeBar = document.getElementById('life-fill');
         this.lifePercent = 100;
@@ -46,6 +46,7 @@ class Diver {
             livesContainer.appendChild(life);
         }
     }
+
 }
 
 class Obstacle {
@@ -60,7 +61,7 @@ class Obstacle {
 
     move() {
         const currentLeft = parseInt(this.element.style.left);
-        this.element.style.left = `${currentLeft - 4}px`;
+        this.element.style.left = `${currentLeft - 4}px`; // Slightly faster movement
         if (currentLeft < -50) {
             this.element.remove();
         }
@@ -100,7 +101,7 @@ function startGame() {
     document.getElementById('game-end').style.display = 'none';
     diver = new Diver();
 
-    
+    // Main game interval for movement and life updates
     gameInterval = setInterval(() => {
         obstacles.forEach((obstacle, index) => {
             obstacle.move();
@@ -110,22 +111,22 @@ function startGame() {
             }
         });
 
-        diver.updateLife(-0.5);
+        diver.updateLife(-0.5); // Decrease life over time
     }, 50);
 
-    
+    // Generate bottles frequently
     bottleInterval = setInterval(() => {
         const bottle = new Obstacle('bottle', 800);
         obstacles.push(bottle);
     }, 1000);
 
-   
+    // Generate oxygen less frequently
     oxygenInterval = setInterval(() => {
         const oxygen = new Obstacle('oxygen', 800);
         obstacles.push(oxygen);
     }, 5000);
 
-   
+    // Generate sharks at medium frequency
     sharkInterval = setInterval(() => {
         const shark = new Obstacle('obstacle', 800);
         obstacles.push(shark);
@@ -139,7 +140,7 @@ function endGame(win) {
     clearInterval(sharkInterval);
     document.querySelector('.game-container').style.display = 'none';
     document.getElementById('game-end').style.display = 'block';
-    document.getElementById('end-message').textContent = win ? 'You Win!' : 'Game Over';
+    /* document.getElementById('end-message').textContent = win ? 'You Win!' : 'Game Over'; */
 }
 
 function initializeGame() {
@@ -152,6 +153,11 @@ document.getElementById('start-button').addEventListener('click', startGame);
 document.getElementById('restart-button').addEventListener('click', () => {
     document.getElementById('game-end').style.display = 'none';
     document.getElementById('game-intro').style.display = 'block';
+    obstacles.forEach((obstacle) => {
+        if (obstacle.element && obstacle.element.parentNode) {
+            obstacle.element.parentNode.removeChild(obstacle.element);
+        }
+    });
     obstacles = [];
 });
 
@@ -160,4 +166,5 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowDown') diver.move(false);
 });
 
+// Ensure the game initializes correctly on load
 initializeGame();
