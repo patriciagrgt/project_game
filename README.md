@@ -34,9 +34,9 @@ Puedes jugar a Save The Ocean directamente desde tu navegador. Solo haz clic en 
 
 ## Tecnologías utilizadas
 
-HTML5 para la estructura del juego.
-CSS3 para el diseño y la interfaz de usuario.
-JavaScript para la lógica del juego y la interacción.
+- HTML5 para la estructura del juego.
+- CSS3 para el diseño y la interfaz de usuario.
+- JavaScript para la lógica del juego y la interacción.
 
 
 ---
