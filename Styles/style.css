@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url(../images/bg_bubbles.png);
+    background-image: url(../Images/bg_bubbles.png);
     background-size: cover;
     /* background-color: #78D4F5; */
     overflow: hidden;
@@ -64,7 +64,7 @@ main {
     width: 100%;
     height: 600px;
     overflow: hidden;
-    background-image: url(../images/bg-sea.png);
+    background-image: url(../Images/bg-sea.png);
     background-repeat: repeat-x;
     background-size: cover;
     animation: moveBackground 20s linear infinite;
@@ -91,12 +91,12 @@ main {
     left: 50px;
     width: 200px;
     height: 130px;
-    background-image: url(../images/diver.png);
+    background-image: url(../Images/diver.png);
     background-size: cover;
 }
 
 .obstacle {
-    background-image: url(../images/shark.png);
+    background-image: url(../Images/shark.png);
     background-size: cover;
     position: absolute;
     width: 150px;
@@ -104,7 +104,7 @@ main {
 }
 
 .bottle {
-    background-image: url(../images/plastic-bottle.png);
+    background-image: url(../Images/plastic-bottle.png);
     background-size: cover;
     position: absolute;
     width: 70px;
@@ -112,7 +112,7 @@ main {
 }
 
 .oxygen {
-    background-image: url(../images/oxygen.png);
+    background-image: url(../Images/oxygen.png);
     background-size: cover;
     position: absolute;
     width: 36px;
@@ -146,6 +146,6 @@ main {
 #lives .life {
     width: 30px;
     height: 30px;
-    background-image: url(../images/heart.png);
+    background-image: url(../Images/heart.png);
     background-size: cover;
 }
