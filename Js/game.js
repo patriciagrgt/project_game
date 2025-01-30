@@ -1,5 +1,3 @@
-
-
 class Timer {
     constructor() {
         this.time = 0;
