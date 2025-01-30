@@ -14,18 +14,27 @@
             <img src="./Images/logotipo.png" alt="logo" class="logo-img" />
             </br>
             <button id="start-button">Start Game</button>
-            <div class="text-intro">
-                <p>Use the up and down arrow keys to control the diver</p>
-                <p>Be careful with sharks!</p>
+            </br>
+            <button id="instructions-button">Instructions</button>
+        </div>
+
+        <div id="instructions-modal">
+            <div class="modal-content">
+                <h2>Instrucciones de juego</h2>
+                <p>- Desplázate con las teclas de arriba y abajo del teclado.</p>
+                <p>- ¡Que no se te agote el oxígeno! Las botellas de plástico 
+                    aumentarán la barra de vida y, las de oxígeno, te proporcionarán 
+                    una vida extra, podrás tener hasta 5 vidas.</p>
+                <p>- Cuidado con los tiburones. Si te atrapan, terminará la partida.</p>
+                <button id="close-instructions">Cerrar</button>
             </div>
-            <img src="./Images/arrows-updown.png" alt="arrows" class="arrows-img" />
         </div>
 
         <div class="game-container">
             <div id="game-area">
                 <div id="timer">Time: 0s</div>
                 <div id="life-bar">
-                    
+
                     <div id="life-fill"></div>
                 </div>
                 <div id="lives"></div>
@@ -47,9 +56,9 @@
     <audio id="end-audio" src="./Music/what-a-fuck-120320.mp3"></audio>
 
     <script type="text/javascript" src="./Js/game.js"></script>
-    <script type="text/javascript" src="./Js/player.js"></script>
+    <script type="text/javascript" src="./Js/instructions.js"></script>
     <script type="text/javascript" src="./Js/obstacle.js"></script>
-    <script type="text/javascript" src="./Js/script.js"></script>
+    <script type="text/javascript" src="./Js/diver.js"></script>
 </body>
 
-</html> 
+</html>
