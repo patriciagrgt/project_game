@@ -3,7 +3,6 @@ body {
     font-family: Arial, sans-serif;
     background-image: url(../Images/bg_bubbles.png);
     background-size: cover;
-    /* background-color: #78D4F5; */
     overflow: hidden;
 }
 
@@ -148,4 +147,15 @@ main {
     height: 30px;
     background-image: url(../Images/heart.png);
     background-size: cover;
+}
+
+#timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #030341;
+    padding: 8px 16px;
+    border-radius: 5px;
 }
