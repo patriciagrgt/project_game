@@ -162,6 +162,4 @@ function initializeGame() {
     game.introAudio.play();
 }
 
-
-
 initializeGame();

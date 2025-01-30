@@ -199,18 +199,17 @@ main {
 
 #instructions-button{
     padding: 16px 40px;
-    font-size: 16px;
-    background-color: #ffffff;
-    color: #333333;
-    border: none;
+    font-size: 24px;
+    background-color: transparent;
+    color: white;
+    border-color:#333333 solid;
     border-radius: 6px;
     cursor: pointer;
     margin-bottom: 32px;
-    font-weight: bold;
 }
 
 #instructions-button:hover {
-    background-color: #e3e7d8;
+    background-color: #333333;
 }
 
 
