@@ -1,3 +1,5 @@
+
+
 class Timer {
     constructor() {
         this.time = 0;
@@ -75,7 +77,8 @@ class Diver {
     updateLivesDisplay() {
         const livesContainer = document.getElementById('lives');
         livesContainer.innerHTML = '';
-        for (let i = 0; i < this.lives; i++) {
+        const maxLives = 5;
+        for (let i = 0; i < Math.min(this.lives, maxLives); i++) {
             const life = document.createElement('div');
             life.classList.add('life');
             livesContainer.appendChild(life);
@@ -135,9 +138,19 @@ class Game {
         this.bottleInterval = null;
         this.oxygenInterval = null;
         this.sharkInterval = null;
+
+        //música
+        this.introAudio = document.getElementById('intro-audio');
+        this.gameAudio = document.getElementById('game-audio');
+        this.endAudio = document.getElementById('end-audio');
     }
 
     start() {
+        //música
+        this.stopAllAudio();
+        this.gameAudio.play();
+
+
         document.getElementById('game-intro').style.display = 'none';
         document.querySelector('.game-container').style.display = 'block';
         document.getElementById('game-end').style.display = 'none';
@@ -176,6 +189,10 @@ class Game {
     }
 
     end(win) {
+        //música
+        this.stopAllAudio();
+        this.endAudio.play();
+
         clearInterval(this.gameInterval);
         clearInterval(this.bottleInterval);
         clearInterval(this.oxygenInterval);
@@ -185,10 +202,13 @@ class Game {
         document.querySelector('.game-container').style.display = 'none';
         document.getElementById('game-end').style.display = 'block';
 
-        document.getElementById('end-message').textContent = `Your score: ${this.timer.getElapsedTime()} s!`;
+        document.getElementById('end-message').textContent = `Your score: ${this.timer.getElapsedTime()} s`;
     }
 
     reset() {
+        this.stopAllAudio();
+        this.introAudio.play(); // Volver a la música de introducción
+
         document.getElementById('game-end').style.display = 'none';
         document.getElementById('game-intro').style.display = 'block';
 
@@ -200,7 +220,16 @@ class Game {
 
         this.obstacles = [];
     }
-}
+
+    stopAllAudio() {
+        this.introAudio.pause();
+        this.introAudio.currentTime = 0;
+        this.gameAudio.pause();
+        this.gameAudio.currentTime = 0;
+        this.endAudio.pause();
+        this.endAudio.currentTime = 0;
+    }
+}   
 
 
 let game = new Game();
@@ -225,5 +254,7 @@ function initializeGame() {
     document.getElementById('game-end').style.display = 'none';
     document.getElementById('timer').textContent = 'Time: 0s';
 }
+    // Reproduce el audio de introducción
+    game.introAudio.play();
 
 initializeGame();
