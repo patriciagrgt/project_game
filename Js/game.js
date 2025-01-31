@@ -64,32 +64,36 @@ class Game {
 
     
         this.gameInterval = setInterval(() => {
+            const elapsedTime = this.timer.getElapsedTime(); // Tiempo transcurrido en segundos
+        
             this.obstacles.forEach((obstacle, index) => {
-                obstacle.move();
+                obstacle.move(elapsedTime); // Pasar tiempo transcurrido
                 obstacle.checkCollision(this.diver);
                 if (!document.body.contains(obstacle.element)) {
                     this.obstacles.splice(index, 1);
                 }
             });
-
-            this.diver.updateLife(-0.5);
+        
+            this.diver.updateLife(-0.5); // Reducir vida con el tiempo
         }, 50);
-
         
         this.bottleInterval = setInterval(() => {
-            const bottle = new Obstacle('bottle', 800);
+            const elapsedTime = this.timer.getElapsedTime();
+            const bottle = new Obstacle('bottle', 800, elapsedTime);
             this.obstacles.push(bottle);
-        }, 2000);
-
+        }, Math.max(1000, 2000 - this.timer.getElapsedTime() * 50)); // Aumentar frecuencia gradualmente
+        
         this.oxygenInterval = setInterval(() => {
-            const oxygen = new Obstacle('oxygen', 800);
+            const elapsedTime = this.timer.getElapsedTime();
+            const oxygen = new Obstacle('oxygen', 800, elapsedTime);
             this.obstacles.push(oxygen);
-        }, 7000);
-
+        }, Math.max(4000, 7000 - this.timer.getElapsedTime() * 100)); // Oxígeno más frecuente
+        
         this.sharkInterval = setInterval(() => {
-            const shark = new Obstacle('obstacle', 800);
+            const elapsedTime = this.timer.getElapsedTime();
+            const shark = new Obstacle('obstacle', 800, elapsedTime);
             this.obstacles.push(shark);
-        }, 4000);
+        }, Math.max(2000, 4000 - this.timer.getElapsedTime() * 50));
     }
 
     end(win) {
