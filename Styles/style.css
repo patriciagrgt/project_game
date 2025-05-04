@@ -196,6 +196,11 @@ main {
     text-align: center;
 }
 
+.modal-content p {
+    text-align: left;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
 
 #instructions-button{
     padding: 16px 40px;
