@@ -12,7 +12,7 @@ El objetivo principal es sobrevivir el mayor tiempo posible y, si lo consigue, p
 
 Puedes jugar a Save The Ocean directamente desde tu navegador. Solo haz clic en el siguiente enlace para comenzar:
 
-[https://patricia-graciagutierrez.github.io/project_game/](https://)
+[https://patriciagrgt.github.io/project_game/](https://)
 
 
 ## Cómo jugar
